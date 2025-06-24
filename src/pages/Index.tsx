@@ -3,8 +3,16 @@ import React from 'react';
 import Header from '@/components/Header';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Users, Building2, Target, TrendingUp } from 'lucide-react';
+import { toast } from '@/hooks/use-toast';
 
 const Index = () => {
+  const handleQuickAction = (action: string) => {
+    toast({
+      title: `${action} clicked`,
+      description: `This would open the ${action.toLowerCase()} form/page`,
+    });
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
@@ -101,22 +109,34 @@ const Index = () => {
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-2 gap-4">
-                <button className="p-4 text-left border rounded-lg hover:bg-gray-50 transition-colors">
+                <button 
+                  className="p-4 text-left border rounded-lg hover:bg-gray-50 transition-colors"
+                  onClick={() => handleQuickAction('Add Customer')}
+                >
                   <Users className="h-6 w-6 text-blue-600 mb-2" />
                   <p className="font-medium">Add Customer</p>
                   <p className="text-xs text-gray-500">Create new customer record</p>
                 </button>
-                <button className="p-4 text-left border rounded-lg hover:bg-gray-50 transition-colors">
+                <button 
+                  className="p-4 text-left border rounded-lg hover:bg-gray-50 transition-colors"
+                  onClick={() => handleQuickAction('New Deal')}
+                >
                   <Target className="h-6 w-6 text-green-600 mb-2" />
                   <p className="font-medium">New Deal</p>
                   <p className="text-xs text-gray-500">Start tracking a new deal</p>
                 </button>
-                <button className="p-4 text-left border rounded-lg hover:bg-gray-50 transition-colors">
+                <button 
+                  className="p-4 text-left border rounded-lg hover:bg-gray-50 transition-colors"
+                  onClick={() => handleQuickAction('Add Company')}
+                >
                   <Building2 className="h-6 w-6 text-purple-600 mb-2" />
                   <p className="font-medium">Add Company</p>
                   <p className="text-xs text-gray-500">Register new company</p>
                 </button>
-                <button className="p-4 text-left border rounded-lg hover:bg-gray-50 transition-colors">
+                <button 
+                  className="p-4 text-left border rounded-lg hover:bg-gray-50 transition-colors"
+                  onClick={() => handleQuickAction('View Reports')}
+                >
                   <TrendingUp className="h-6 w-6 text-orange-600 mb-2" />
                   <p className="font-medium">View Reports</p>
                   <p className="text-xs text-gray-500">Analyze performance</p>

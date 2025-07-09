@@ -88,7 +88,7 @@ const Auth = () => {
           description: 'Please check your email to verify your account.',
         });
       }
-    } catch (error) {
+    } catch (_error) {
       toast({
         title: 'Error',
         description: 'An unexpected error occurred.',

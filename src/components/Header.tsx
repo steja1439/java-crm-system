@@ -15,7 +15,7 @@ const Header = () => {
         title: 'Signed out',
         description: 'You have been successfully signed out.',
       });
-    } catch (error) {
+    } catch (_error) {
       toast({
         title: 'Error',
         description: 'Failed to sign out.',

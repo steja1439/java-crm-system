@@ -1,5 +1,4 @@
-import * as React from "react"
-import type{
+{
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },
